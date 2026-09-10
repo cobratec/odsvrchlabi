@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ODS Vrchlabí — komunální volby 2026</title>
+<meta name="description" content="Místní sdružení ODS Vrchlabí — volební program, kandidátka a kontakty pro komunální volby 2026.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  // Dokud assets/img/logo-ods.png neexistuje, nahradí se náhradní
+  // textovou značkou "V" (viz README.md, sekce Logo).
+  function odsLogoFallback(img) {
+    var span = document.createElement("span");
+    span.className = "logo-mark";
+    span.textContent = "V";
+    img.replaceWith(span);
+  }
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Přeskočit na obsah</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/img/logo-ods.png" alt="ODS Vrchlabí" class="logo-img" onerror="odsLogoFallback(this)">
+      <span class="logo-text">ODS <strong>Vrchlabí</strong></span>
+    </a>
+    <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="main-nav" aria-label="Otevřít menu">
+      <i class="mdi mdi-menu" aria-hidden="true"></i>
+    </button>
+    <nav class="main-nav" id="main-nav" data-main-nav aria-label="Hlavní navigace">
+      <div class="main-nav-inner">
+        <ul>
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="volebni-program.html">Volební program</a></li>
+          <li><a href="kontakty.html">Kontakty</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="kandidatka.html"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i> Naši kandidáti</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <span class="election-sticker" role="img" aria-label="Volte ODS Vrchlabí, číslo 1 na hlasovacím lístku">
+      <span class="sticker-label">Volte</span>
+      <span class="sticker-number">1</span>
+      <span class="sticker-sub">ODS Vrchlabí</span>
+    </span>
+    <div class="container">
+      <span class="kicker"><i class="mdi mdi-vote-outline" aria-hidden="true"></i> Komunální volby 2026</span>
+      <h1>ODS Vrchlabí — Vrchlabí jako dobrá adresa</h1>
+      <p class="lead">Místní sdružení Občanské demokratické strany ve Vrchlabí. Podívejte se na náš program pro nadcházející komunální volby a na lidi, kteří za ním stojí.</p>
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="volebni-program.html"><i class="mdi mdi-file-document-outline" aria-hidden="true"></i> Volební program</a>
+        <a class="btn btn-ghost" href="kandidatka.html"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i> Kandidátka</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hub">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Rozcestník</span>
+        <h2>Co vás zajímá?</h2>
+      </div>
+      <div class="hub-grid">
+        <a class="hub-card" href="volebni-program.html">
+          <span class="hub-icon"><i class="mdi mdi-file-document-outline" aria-hidden="true"></i></span>
+          <h3>Volební program</h3>
+          <p>Sedm klíčových témat, na kterých ve Vrchlabí chceme dál pracovat.</p>
+          <span class="hub-link">Zobrazit program <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="hub-card" href="kandidatka.html">
+          <span class="hub-icon"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i></span>
+          <h3>Kandidátka</h3>
+          <p>Poznejte lidi, kteří kandidují za ODS Vrchlabí v komunálních volbách 2026.</p>
+          <span class="hub-link">Zobrazit kandidátku <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a class="hub-card" href="kontakty.html">
+          <span class="hub-icon"><i class="mdi mdi-email-outline" aria-hidden="true"></i></span>
+          <h3>Kontakty</h3>
+          <p>Napište nám, sledujte nás na sociálních sítích nebo se přijďte zapojit.</p>
+          <span class="hub-link">Zobrazit kontakty <i class="mdi mdi-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="container strip-inner">
+      <div>
+        <h2>Sledujte nás</h2>
+        <p>Aktuální dění, akce a novinky z Vrchlabí sdílíme na sociálních sítích.</p>
+      </div>
+      <div class="social-row">
+        <a class="social-btn" href="https://www.facebook.com/ODSVrchlabi" target="_blank" rel="noopener"><i class="mdi mdi-facebook" aria-hidden="true"></i> Facebook</a>
+        <a class="social-btn" href="https://www.instagram.com/odsvrchlabi/" target="_blank" rel="noopener"><i class="mdi mdi-instagram" aria-hidden="true"></i> Instagram</a>
+        <a class="social-btn" href="https://www.youtube.com/@odsvrchlabi4559" target="_blank" rel="noopener"><i class="mdi mdi-youtube" aria-hidden="true"></i> YouTube</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/img/logo-ods.png" alt="ODS Vrchlabí" class="logo-img" onerror="odsLogoFallback(this)"><span class="logo-text">ODS Vrchlabí</span></a>
+        <p>Místní sdružení Občanské demokratické strany ve Vrchlabí. Komunální volby 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Web</h4>
+        <ul>
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="volebni-program.html">Volební program</a></li>
+          <li><a href="kontakty.html">Kontakty</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sociální sítě</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/ODSVrchlabi" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/odsvrchlabi/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@odsvrchlabi4559" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ODS Vrchlabí</span>
+      <span>Občanská demokratická strana</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data/program-data.js"></script>
+<script src="assets/js/data/kandidati-data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

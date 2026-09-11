@@ -47,12 +47,7 @@ napište do souboru jen `home-city-outline`).
    zobrazí bez fotky (chybějící obrázek web nijak nerozbije). Stačí
    do `assets/img/program/` nahrát fotky pod těmito názvy.
 
-2. **E-mail** na stránce `kontakty.html` je zatím zástupný text
-   označený `TODO:` (vidět i na stránce jako oranžová poznámka).
-   Nahraďte ho reálnou adresou a poznámku
-   `<span class="todo-note">…</span>` smažte.
-
-Fotky kandidátů i logo ODS jsou už doplněné.
+Fotky kandidátů, logo ODS i e-mailový kontakt jsou už doplněné.
 
 ## Grafický styl
 

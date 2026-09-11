@@ -73,7 +73,7 @@ window.PROGRAM_DATA = [
   {
     tema: "Fungující doprava = živé město",
     podtitul: "Dopravu musíme přizpůsobit našim potřebám, ne ji dusit",
-    text: "Současné vedení radnice vede letitý a nesmiřitelný boj proti dopravě ve městě. Na vozovkách vybudovalo hrby a umělé schody, silnice se nesmyslně zužují a rozšiřují se chodníky. Parkovací místa se zmenšují, zmenšuje se jejich počet a komplikuje způsob parkování. Zásobování provozoven v centru komplikuje průjezd městem. V zájmu podpory zaměstnanosti a cestovního ruchu v centru města je nezbytné změnit systém parkování.",
+    text: "Současné vedení radnice vede letitý a nesmiřitelný boj proti dopravě ve městě. Na vozovkách vybudovalo hrby a umělé schody, silnice se nesmyslně zužují a rozšiřují se chodníky. Snižuje se počet parkovacích míst a zásobování provozoven v centru komplikuje průjezd městem. V zájmu podpory zaměstnanosti a cestovního ruchu je nezbytné změnit systém parkování. Stejně tak je potřeba investovat do stávající infrastruktury – mosty a komunikace ve městě dlouhodobě chátrají a čekají na opravu.",
     mdiIcon: "parking",
     foto: "assets/img/program/parkovani.jpg"
   }

@@ -13,7 +13,22 @@
     initActiveLink();
     initProgramTiles();
     initCandidates();
+    initEventBanner();
   });
+
+  /* ---------- Dočasné tlačítko na pozvánku/akci: jakmile projde datum
+     v data-event-expires (formát RRRR-MM-DD), tlačítko se samo skryje
+     a nemusíte ho ručně mazat. ---------- */
+  function initEventBanner() {
+    document.querySelectorAll("[data-event-expires]").forEach(function (el) {
+      var expires = el.getAttribute("data-event-expires");
+      if (!expires) return;
+      var expiryTime = new Date(expires + "T23:59:59").getTime();
+      if (!isNaN(expiryTime) && Date.now() > expiryTime) {
+        el.remove();
+      }
+    });
+  }
 
   /* ---------- Mobilní navigace ---------- */
   function initNav() {

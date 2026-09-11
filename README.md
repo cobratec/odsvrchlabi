@@ -42,10 +42,10 @@ napište do souboru jen `home-city-outline`).
 1. **Fotky k jednotlivým bodům volebního programu** — pole `foto` v
    `program-data.js` odkazuje na soubory v `assets/img/program/`
    (`bydleni.jpg`, `seniori.jpg`, `podnikani.jpg`, `ctvrte.jpg`,
-   `doprava.jpg`, `sport.jpg`), ty zatím ve složce nejsou. Dokud
-   chybí, dlaždice a detail bodu se zobrazí bez fotky (chybějící
-   obrázek web nijak nerozbije). Stačí do `assets/img/program/`
-   nahrát fotky pod těmito názvy.
+   `doprava.jpg`, `sport.jpg`, `bezpecnost.jpg`, `parkovani.jpg`),
+   ty zatím ve složce nejsou. Dokud chybí, dlaždice a detail bodu se
+   zobrazí bez fotky (chybějící obrázek web nijak nerozbije). Stačí
+   do `assets/img/program/` nahrát fotky pod těmito názvy.
 
 2. **E-mail** na stránce `kontakty.html` je zatím zástupný text
    označený `TODO:` (vidět i na stránce jako oranžová poznámka).

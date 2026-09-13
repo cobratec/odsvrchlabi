@@ -1,24 +1,12 @@
-/* =========================================================
-   VOLEBNÍ PROGRAM — komunální volby 2026
-   ---------------------------------------------------------
-   Tady upravujete obsah stránky "Volební program". Nic jiného
-   se měnit nemusí — web se sám podle tohoto souboru přeskládá.
+/* VOLEBNÍ PROGRAM — komunální volby 2026
+   Editace obsahu stránky "Volební program", jinde se nic měnit nemusí.
 
-   Každá položka má tato pole:
-     tema     – název tématu (nadpis dlaždice)
-     podtitul – krátký podtitul, zobrazí se pod tématem na dlaždici
-     text     – delší text, zobrazí se po rozkliknutí dlaždice
-     mdiIcon  – název ikony z knihovny Material Design Icons,
-                BEZ předpony "mdi-". Seznam a náhledy ikon:
-                https://pictogrammers.com/library/mdi/
-     foto     – cesta k obrázku k danému bodu programu (nepovinné,
-                pokud necháte prázdný řetězec "", fotka se nezobrazí).
-                Obrázky ukládejte do assets/img/program/.
-
-   Obsah je převzatý ze souboru "programové teze.docx". Fotky
-   k jednotlivým bodům zatím chybí — jakmile je budete mít, uložte
-   je do assets/img/program/ pod názvy uvedenými níže.
-   ========================================================= */
+   tema     – nadpis dlaždice
+   podtitul – krátký podtitul pod tématem na dlaždici
+   text     – plný text, zobrazí se v modalu po kliknutí
+   mdiIcon  – ikona z https://pictogrammers.com/library/mdi/, bez prefixu "mdi-"
+   foto     – cesta k obrázku (assets/img/program/), "" = bez fotky
+*/
 
 window.PROGRAM_DATA = [
   {
@@ -73,7 +61,7 @@ window.PROGRAM_DATA = [
   {
     tema: "Fungující doprava = živé město",
     podtitul: "Dopravu musíme přizpůsobit našim potřebám, ne ji dusit",
-    text: "Současné vedení radnice vede letitý a nesmiřitelný boj proti dopravě ve městě. Na vozovkách vybudovalo hrby a umělé schody, silnice se nesmyslně zužují a rozšiřují se chodníky. Snižuje se počet parkovacích míst a zásobování provozoven v centru komplikuje průjezd městem. V zájmu podpory zaměstnanosti a cestovního ruchu je nezbytné změnit systém parkování. Stejně tak je potřeba investovat do stávající infrastruktury – mosty a komunikace ve městě dlouhodobě chátrají a čekají na opravu.",
+    text: "Současné vedení radnice vede letitý a nesmiřitelný boj proti dopravě ve městě. Na vozovkách vybudovalo hrby a umělé schody, silnice se nesmyslně zužují a rozšiřují se chodníky. Parkovací místa se zmenšují, zmenšuje se jejich počet a komplikuje způsob parkování. Zásobování provozoven v centru komplikuje průjezd městem. V zájmu podpory zaměstnanosti a cestovního ruchu v centru města je nezbytné změnit systém parkování.",
     mdiIcon: "parking",
     foto: "assets/img/program/parkovani.jpg"
   }

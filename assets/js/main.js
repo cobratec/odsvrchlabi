@@ -1,8 +1,5 @@
-/* =========================================================
-   ODS Vrchlabí — společná JS logika pro všechny stránky.
-   Nic tady obvykle není potřeba upravovat — obsah se bere
-   z assets/js/data/*.js.
-   ========================================================= */
+/* ODS Vrchlabí — sdílená JS logika pro všechny stránky.
+   Obsah se bere z assets/js/data/*.js. */
 (function () {
   "use strict";
 
@@ -16,9 +13,7 @@
     initEventBanner();
   });
 
-  /* ---------- Dočasné tlačítko na pozvánku/akci: jakmile projde datum
-     v data-event-expires (formát RRRR-MM-DD), tlačítko se samo skryje
-     a nemusíte ho ručně mazat. ---------- */
+  /* Skryje elementy s prošlým data-event-expires (RRRR-MM-DD) */
   function initEventBanner() {
     document.querySelectorAll("[data-event-expires]").forEach(function (el) {
       var expires = el.getAttribute("data-event-expires");

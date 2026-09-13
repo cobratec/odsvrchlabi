@@ -1,75 +1,44 @@
 # Web ODS Vrchlabí — komunální volby 2026
 
-Jednoduchý responzivní web (HTML/CSS/JS, žádný build proces) pro místní
-sdružení ODS Vrchlabí. Skládá se ze 4 stránek:
+Statický web (HTML/CSS/JS, žádný build). 4 stránky:
 
-- `index.html` — hlavní stránka / rozcestník
+- `index.html` — homepage / rozcestník
 - `volebni-program.html` — volební program (dlaždice s tématy)
-- `kandidatka.html` — kandidátka pro komunální volby 2026
+- `kandidatka.html` — kandidátka
 - `kontakty.html` — kontakty
 
-## Jak web spustit / prohlédnout
+## Spuštění
 
-Web je čistě statický — žádný server ani instalace není potřeba.
-Nejjednodušší je otevřít `index.html` přímo v prohlížeči (poklikáním),
-nebo si ve VS Code nainstalovat rozšíření "Live Server" pro plynulejší
-prohlížení s automatickým obnovováním.
+Čistě statické soubory — stačí otevřít `index.html` v prohlížeči, nebo pustit
+přes Live Server / libovolný static server.
 
-## Co upravovat — obsah
+## Obsah
 
-**Neupravujte HTML stránky, pokud nechcete měnit strukturu webu.**
-Textový obsah, který se mění nejčastěji, je v těchto dvou souborech:
+Program a kandidátka se needitují v HTML, ale v datových souborech:
 
-- `assets/js/data/program-data.js` — obsah volebního programu
-  (téma, podtitul, text, ikona, fotka)
-- `assets/js/data/kandidati-data.js` — kandidátka (jméno, politická
-  příslušnost, fotka, popis u lídra)
+- `assets/js/data/program-data.js` — body programu (`tema`, `podtitul`, `text`, `mdiIcon`, `foto`)
+- `assets/js/data/kandidati-data.js` — kandidáti (`jmeno`, `prislusnost`, `foto`, `popis` jen u lídra)
 
-Oba soubory jsou obyčejný JavaScript pole objektů s komentáři u
-každého pole — otevřete je v Poznámkovém bloku, VS Code nebo
-libovolném textovém editoru, upravte text mezi uvozovkami a uložte.
-Web se po obnovení stránky sám přeskládá podle nového obsahu.
+Obě jsou obyčejná JS pole objektů, `main.js` je při načtení stránky vyrenderuje do DOMu.
 
-### Ikony volebního programu
+**Ikony:** `mdiIcon` = název z https://pictogrammers.com/library/mdi/ bez prefixu `mdi-`.
 
-Pole `mdiIcon` odkazuje na knihovnu Material Design Icons. Seznam a
-náhled všech ikon: https://pictogrammers.com/library/mdi/ — zkopírujte
-název ikony BEZ předpony `mdi-` (např. u ikony `mdi-home-city-outline`
-napište do souboru jen `home-city-outline`).
+**Fotky programu:** `assets/img/program/*.jpg`, název souboru = hodnota `foto` v datech.
+Chybějící/nenačtená fotka web nerozbije — dlaždice/detail se prostě zobrazí bez ní.
 
-Fotky k bodům volebního programu, fotky kandidátů, logo ODS i
-e-mailový kontakt jsou už doplněné.
+## Styl
 
-### Výměna fotky u bodu programu
-
-Fotky k jednotlivým bodům volebního programu jsou v
-`assets/img/program/` (`bydleni.jpg`, `seniori.jpg`, `podnikani.jpg`,
-`ctvrte.jpg`, `doprava.jpg`, `sport.jpg`, `bezpecnost.jpg`,
-`parkovani.jpg`) — název souboru musí odpovídat poli `foto` v
-`program-data.js`. Chcete-li fotku vyměnit, prostě nahraďte soubor se
-stejným názvem novým (ideálně na šířku, alespoň cca 1200×800 px, ve
-formátu .jpg). Pokud fotka chybí nebo se nenačte, dlaždice a detail
-bodu se zobrazí bez ní — web tím nijak nespadne.
-
-## Grafický styl
-
-Barvy vycházejí z aktuálního grafického manuálu ODS
-(https://www.ods.cz/o-nas/grafika): plná modrá `#034ea2` a přechod
-`#1e398d → #009edb`. Písmo Avenir Next LT Pro z manuálu je licencované,
-proto web používá volně dostupné náhrady Poppins (nadpisy) a Inter
-(text) z Google Fonts, které mají podobný moderní geometrický charakter.
+Barvy dle grafického manuálu ODS (ods.cz/o-nas/grafika): `--ods-blue #034ea2`,
+gradient `#1e398d → #009edb`. Avenir Next LT Pro je licencovaný font, takže je
+nahrazený Poppins (nadpisy) + Inter (text) z Google Fonts.
 
 ## Logo
 
-Hlavička a patička používají soubor `assets/img/logo-ods.png`. Pokud
-by tento soubor někdy chyběl nebo se poškodil, web se sám přepne na
-náhradní textovou značku "V" (viz `assets/js/main.js` /
-`odsLogoFallback` v hlavičce každé stránky) — web tím nespadne, jen
-se dočasně zobrazí bez loga.
+`assets/img/logo-ods.png` v hlavičce a patičce. Když chybí nebo se nenačte,
+`onerror` v HTML přepne na textový fallback "V" (`odsLogoFallback()`, inline
+`<script>` v `<head>` každé stránky).
 
-## Nasazení
+## Deploy
 
-Jde o čistě statické soubory — po doplnění obsahu je možné celou
-složku nahrát na jakýkoli webhosting (FTP) nebo použít službu jako
-Netlify / GitHub Pages. Stačí nahrát celý obsah této složky tak, jak
-je (žádné buildování).
+Statika bez buildu — nahrát celou složku na hosting / Netlify / GitHub Pages
+tak, jak je.

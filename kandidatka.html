@@ -11,8 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
-  // Dokud assets/img/logo-ods.png neexistuje, nahradí se náhradní
-  // textovou značkou "V" (viz README.md, sekce Logo).
+  // Fallback na textovou značku "V", když logo chybí / se nenačte
   function odsLogoFallback(img) {
     var span = document.createElement("span");
     span.className = "logo-mark";

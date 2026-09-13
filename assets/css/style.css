@@ -1,10 +1,6 @@
-/* =========================================================
-   ODS Vrchlabí — komunální volby 2026
-   Barvy vycházejí z grafického manuálu ODS (ods.cz/o-nas/grafika):
-   #034ea2 plná modrá, přechod #1e398d → #009edb.
-   Mobile-first: základní styly platí pro mobil, media queries přidávají
-   vylepšení pro širší obrazovky.
-   ========================================================= */
+/* ODS Vrchlabí. Barvy dle grafického manuálu ODS (ods.cz/o-nas/grafika):
+   #034ea2 plná modrá, gradient #1e398d → #009edb. Mobile-first — base
+   styly jsou pro mobil, media queries přidávají větší obrazovky. */
 
 :root {
   --ods-blue: #034ea2;

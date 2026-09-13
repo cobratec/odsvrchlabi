@@ -1,21 +1,14 @@
-/* =========================================================
-   KANDIDÁTKA — komunální volby 2026
-   ---------------------------------------------------------
-   Pořadí a jména kandidátů odpovídají kandidátce zveřejněné na
-   www.odsvrchlabi.cz.
+/* KANDIDÁTKA — komunální volby 2026
+   Pořadí/jména dle kandidátky na www.odsvrchlabi.cz.
 
-   Pole:
-     jmeno        – celé jméno včetně titulů
-     prislusnost  – "ODS" nebo "BEZ PP"
-     foto         – cesta k fotce (assets/img/kandidati/…)
-     popis        – delší popis; vyplňuje se POUZE u prvního
-                    kandidáta (lídra), u ostatních zůstává "".
+   jmeno        – celé jméno vč. titulů
+   prislusnost  – "ODS" nebo "BEZ PP"
+   foto         – assets/img/kandidati/N.png
+   popis        – jen u lídra (první položka pole), jinak ""
 
-   FOTKY: fotky kandidátů jsou už stažené v assets/img/kandidati/
-   (1.png až 21.png). Pomocné stahovací skripty (kdyby bylo někdy
-   potřeba stáhnout znovu) najdete v kořeni webu —
-   download-fotky-kandidatu.bat / .ps1.
-   ========================================================= */
+   Fotky (1.png–21.png) jsou už v assets/img/kandidati/. Skripty pro jejich
+   (re)stažení: download-fotky-kandidatu.bat / .ps1 v kořeni webu.
+*/
 
 window.KANDIDATI_DATA = [
   {

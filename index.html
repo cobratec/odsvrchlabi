@@ -11,8 +11,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
-  // Dokud assets/img/logo-ods.png neexistuje, nahradí se náhradní
-  // textovou značkou "V" (viz README.md, sekce Logo).
+  // Fallback na textovou značku "V", když logo chybí / se nenačte
   function odsLogoFallback(img) {
     var span = document.createElement("span");
     span.className = "logo-mark";
@@ -63,9 +62,7 @@
       <div class="hero-actions">
         <a class="btn btn-ghost" href="volebni-program.html"><i class="mdi mdi-file-document-outline" aria-hidden="true"></i> Volební program</a>
         <a class="btn btn-ghost" href="kandidatka.html"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i> Kandidátka</a>
-        <!-- Dočasné tlačítko na pozvánku — po termínu akce se samo skryje
-             (viz data-event-expires níže a initEventBanner v main.js).
-             Datum a text si prosím zkontrolujte / upravte. -->
+        <!-- Dočasné tlačítko, mizí samo po datu v data-event-expires (main.js: initEventBanner) -->
         <a class="btn btn-event" href="https://www.facebook.com/events/4626070217670325/" target="_blank" rel="noopener" data-event-expires="2026-09-15">
           <i class="mdi mdi-calendar-star" aria-hidden="true"></i> Setkání s Petrem Fialou
         </a>

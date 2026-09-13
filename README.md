@@ -37,17 +37,19 @@ náhled všech ikon: https://pictogrammers.com/library/mdi/ — zkopírujte
 název ikony BEZ předpony `mdi-` (např. u ikony `mdi-home-city-outline`
 napište do souboru jen `home-city-outline`).
 
-## Co je potřeba doplnit / zkontrolovat
+Fotky k bodům volebního programu, fotky kandidátů, logo ODS i
+e-mailový kontakt jsou už doplněné.
 
-1. **Fotky k jednotlivým bodům volebního programu** — pole `foto` v
-   `program-data.js` odkazuje na soubory v `assets/img/program/`
-   (`bydleni.jpg`, `seniori.jpg`, `podnikani.jpg`, `ctvrte.jpg`,
-   `doprava.jpg`, `sport.jpg`, `bezpecnost.jpg`, `parkovani.jpg`),
-   ty zatím ve složce nejsou. Dokud chybí, dlaždice a detail bodu se
-   zobrazí bez fotky (chybějící obrázek web nijak nerozbije). Stačí
-   do `assets/img/program/` nahrát fotky pod těmito názvy.
+### Výměna fotky u bodu programu
 
-Fotky kandidátů, logo ODS i e-mailový kontakt jsou už doplněné.
+Fotky k jednotlivým bodům volebního programu jsou v
+`assets/img/program/` (`bydleni.jpg`, `seniori.jpg`, `podnikani.jpg`,
+`ctvrte.jpg`, `doprava.jpg`, `sport.jpg`, `bezpecnost.jpg`,
+`parkovani.jpg`) — název souboru musí odpovídat poli `foto` v
+`program-data.js`. Chcete-li fotku vyměnit, prostě nahraďte soubor se
+stejným názvem novým (ideálně na šířku, alespoň cca 1200×800 px, ve
+formátu .jpg). Pokud fotka chybí nebo se nenačte, dlaždice a detail
+bodu se zobrazí bez ní — web tím nijak nespadne.
 
 ## Grafický styl
 

@@ -1,0 +1,37 @@
+name: Deploy to FTP
+
+# Spustí se při každém push do hlavní větve.
+# Pokud repo používá "master" místo "main", uprav branches níže.
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: FTP Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps          # pokud hosting vyžaduje čisté FTP bez šifrování, změň na "ftp"
+
+          # Web se nasazuje výhradně do vlastní podsložky /ods2026/, nikam jinam.
+          # Díky tomu se tahle akce (a její mazání souborů, co nejsou v repu)
+          # nikdy nedotkne WordPressu ani /pub v rootu FTP — jsou mimo její dosah.
+          server-dir: /ods2026/
+
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
+
+      # Přesměrování v rootu (root/index.html -> /ods2026/index.html) se sem
+      # záměrně nepřidává — nahrává se ručně, jednorázově. Viz poznámka v chatu.

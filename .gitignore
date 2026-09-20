@@ -1,0 +1,7 @@
+# Soubory stažené z Claude chatu (desktopová appka je ukládá sem automaticky)
+Claude outputs/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini

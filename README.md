@@ -1,11 +1,12 @@
 # Web ODS Vrchlabí — komunální volby 2026
 
-Statický web (HTML/CSS/JS, žádný build). 4 stránky:
+Statický web (HTML/CSS/JS, žádný build). 5 stránek:
 
 - `index.html` — homepage / rozcestník
 - `volebni-program.html` — volební program (dlaždice s tématy)
 - `kandidatka.html` — kandidátka
 - `kontakty.html` — kontakty
+- `rozhovor.html` — volební rozhovor s lídrem; odkaz jen z homepage (teaser), záměrně není v horním menu
 
 ## Spuštění
 

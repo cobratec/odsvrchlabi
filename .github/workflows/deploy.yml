@@ -25,7 +25,7 @@ jobs:
           # Web se nasazuje výhradně do vlastní podsložky /ods2026/, nikam jinam.
           # Díky tomu se tahle akce (a její mazání souborů, co nejsou v repu)
           # nikdy nedotkne WordPressu ani /pub v rootu FTP — jsou mimo její dosah.
-          server-dir: /ods2026/
+          server-dir: /www/ods2026/
 
           exclude: |
             **/.git*

@@ -111,13 +111,6 @@ button { font: inherit; }
 }
 .btn-outline:hover { border-color: var(--ods-blue); box-shadow: var(--shadow-sm); }
 
-.btn-event {
-  background: #ffb703;
-  color: #1f1400;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
-}
-.btn-event:hover { background: #ffc933; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22); transform: translateY(-1px); }
-
 /* ---------- Header / navigace ---------- */
 .site-header {
   position: sticky;
@@ -256,6 +249,18 @@ button { font: inherit; }
   letter-spacing: .03em;
   text-transform: uppercase;
   margin-bottom: 18px;
+}
+.hero .kicker-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  color: var(--ods-blue-dark);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin: 0 0 18px 8px;
 }
 .hero h1 {
   color: #fff;
@@ -777,11 +782,11 @@ button { font: inherit; }
 }
 
 .interview-qa {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
   margin-bottom: 32px;
 }
+.interview-qa::after { content: ""; display: table; clear: both; }
+.qa-item { margin-bottom: 26px; }
+.qa-item:last-child { margin-bottom: 0; }
 .qa-q {
   display: flex;
   gap: 8px;
@@ -820,7 +825,19 @@ button { font: inherit; }
 }
 .info-box-list li .mdi { color: var(--ods-cyan); flex-shrink: 0; margin-top: 3px; }
 
+/* Na širších obrazovkách "Co chceme?" plave vpravo, text rozhovoru ho obtéká.
+   Na mobilu (pod 700px) je přes celou šířku jako běžný blok, jinak by se
+   seznam bodů příliš zmáčkl. */
+@media (min-width: 700px) {
+  .info-box-float {
+    float: right;
+    width: 33%;
+    margin: 4px 0 20px 28px;
+  }
+}
+
 .info-box-gold {
+  clear: both;
   background: #fff8e6;
   border: 1px solid rgba(255, 183, 3, 0.5);
 }

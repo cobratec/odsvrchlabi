@@ -66,15 +66,16 @@
     </span>
     <div class="container">
       <span class="kicker"><i class="mdi mdi-vote-outline" aria-hidden="true"></i> Komunální volby 2026</span>
+      <span class="kicker-date"><i class="mdi mdi-calendar-outline" aria-hidden="true"></i> 9.–10. října 2026</span>
       <h1>ODS Vrchlabí<span class="hero-subline">Vrchlabí jako dobrá adresa</span></h1>
       <p class="lead">Místní sdružení Občanské demokratické strany ve Vrchlabí. Podívejte se na náš program pro nadcházející komunální volby a na lidi, kteří za ním stojí.</p>
       <div class="hero-actions">
         <a class="btn btn-ghost" href="volebni-program.html"><i class="mdi mdi-file-document-outline" aria-hidden="true"></i> Volební program</a>
         <a class="btn btn-ghost" href="kandidatka.html"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i> Kandidátka</a>
-        <!-- Dočasné tlačítko, mizí samo po datu v data-event-expires (main.js: initEventBanner) -->
-        <a class="btn btn-event" href="https://www.facebook.com/events/4626070217670325/" target="_blank" rel="noopener" data-event-expires="2026-09-15">
-          <i class="mdi mdi-calendar-star" aria-hidden="true"></i> Setkání s Petrem Fialou
-        </a>
+        <!-- Vygeneruje a stáhne .ics soubor s termínem voleb (main.js: initVoteCalendar) -->
+        <button type="button" class="btn btn-ghost" id="add-to-calendar-btn">
+          <i class="mdi mdi-calendar-plus" aria-hidden="true"></i> Přidat do kalendáře
+        </button>
       </div>
     </div>
   </section>

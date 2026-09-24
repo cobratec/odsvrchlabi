@@ -10,18 +10,60 @@
     initActiveLink();
     initProgramTiles();
     initCandidates();
-    initEventBanner();
+    initVoteCalendar();
   });
 
-  /* Skryje elementy s prošlým data-event-expires (RRRR-MM-DD) */
-  function initEventBanner() {
-    document.querySelectorAll("[data-event-expires]").forEach(function (el) {
-      var expires = el.getAttribute("data-event-expires");
-      if (!expires) return;
-      var expiryTime = new Date(expires + "T23:59:59").getTime();
-      if (!isNaN(expiryTime) && Date.now() > expiryTime) {
-        el.remove();
-      }
+  /* Tlačítko "Přidat do kalendáře" na homepage — vygeneruje .ics se
+     schůzkou "Jít volit ODS Vrchlabí" a nechá ho stáhnout/otevřít. */
+  function initVoteCalendar() {
+    var btn = document.getElementById("add-to-calendar-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", function () {
+      var stamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+      var ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//ODS Vrchlabi//Komunalni volby 2026//CS",
+        "CALSCALE:GREGORIAN",
+        "BEGIN:VTIMEZONE",
+        "TZID:Europe/Prague",
+        "BEGIN:DAYLIGHT",
+        "TZOFFSETFROM:+0100",
+        "TZOFFSETTO:+0200",
+        "TZNAME:CEST",
+        "DTSTART:19700329T020000",
+        "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU",
+        "END:DAYLIGHT",
+        "BEGIN:STANDARD",
+        "TZOFFSETFROM:+0200",
+        "TZOFFSETTO:+0100",
+        "TZNAME:CET",
+        "DTSTART:19701025T030000",
+        "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU",
+        "END:STANDARD",
+        "END:VTIMEZONE",
+        "BEGIN:VEVENT",
+        "UID:volby2026-" + stamp + "@odsvrchlabi.cz",
+        "DTSTAMP:" + stamp,
+        "DTSTART;TZID=Europe/Prague:20261010T090000",
+        "DTEND;TZID=Europe/Prague:20261010T100000",
+        "SUMMARY:Jít volit ODS Vrchlabí",
+        "LOCATION:Vrchlabí",
+        "DESCRIPTION:Komunální volby 2026 – hlasovací místnosti jsou otevřené v pátek 9. října 14:00–22:00 a v sobotu 10. října 8:00–14:00. Podpořte ODS Vrchlabí\\, kandidátní listina číslo 1.",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      var blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "jit-volit-ods-vrchlabi.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
     });
   }
 

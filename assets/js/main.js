@@ -21,6 +21,7 @@
 
     btn.addEventListener("click", function () {
       var stamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+      var pollingUrl = "https://www.muvrchlabi.cz/e_download.php?file=/data/uredni_deska/obsah2748_2.pdf&original=%C3%9AD_Ozn%C3%A1men%C3%AD_-_po%C4%8Det_okrsk%C5%AF.pdf";
       var ics = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
@@ -50,7 +51,8 @@
         "DTEND;TZID=Europe/Prague:20261010T100000",
         "SUMMARY:Jít volit ODS Vrchlabí",
         "LOCATION:Vrchlabí",
-        "DESCRIPTION:Komunální volby 2026 – hlasovací místnosti jsou otevřené v pátek 9. října 14:00–22:00 a v sobotu 10. října 8:00–14:00. Podpořte ODS Vrchlabí\\, kandidátní listina číslo 1.",
+        "DESCRIPTION:Komunální volby 2026 – hlasovací místnosti jsou otevřené v pátek 9. října 14:00–22:00 a v sobotu 10. října 8:00–14:00. Podpořte ODS Vrchlabí\\, kandidátní listina číslo 1. Seznam volebních místností: " + pollingUrl,
+        "URL:" + pollingUrl,
         "END:VEVENT",
         "END:VCALENDAR"
       ].join("\r\n");

@@ -250,18 +250,6 @@ button { font: inherit; }
   text-transform: uppercase;
   margin-bottom: 18px;
 }
-.hero .kicker-date {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #fff;
-  color: var(--ods-blue-dark);
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.82rem;
-  margin: 0 0 18px 8px;
-}
 .hero h1 {
   color: #fff;
   font-size: clamp(2rem, 6vw, 3.1rem);
@@ -284,62 +272,6 @@ button { font: inherit; }
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-}
-
-/* ---------- Volební nálepka "Volte číslo 1" ---------- */
-.election-sticker {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 5;
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px dashed var(--ods-blue);
-  box-shadow: 0 10px 24px rgba(3, 12, 30, 0.28), 0 0 0 5px rgba(255, 255, 255, 0.22);
-  transform: rotate(-9deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 1.05;
-  transition: transform .2s ease;
-}
-.election-sticker:hover { transform: rotate(-3deg) scale(1.04); }
-.election-sticker .sticker-label {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 0.56rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.election-sticker .sticker-number {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-size: 1.9rem;
-  color: var(--ods-blue);
-}
-.election-sticker .sticker-sub {
-  font-weight: 700;
-  font-size: 0.5rem;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-  color: var(--ods-cyan);
-}
-
-@media (min-width: 640px) {
-  .election-sticker {
-    width: 116px;
-    height: 116px;
-    top: 24px;
-    right: 28px;
-  }
-  .election-sticker .sticker-label { font-size: 0.7rem; }
-  .election-sticker .sticker-number { font-size: 2.6rem; }
-  .election-sticker .sticker-sub { font-size: 0.62rem; }
 }
 
 .page-hero {
@@ -445,6 +377,40 @@ button { font: inherit; }
 .interview-promo-body p { color: var(--ink-soft); margin-bottom: 14px; }
 @media (min-width: 620px) {
   .interview-promo { flex-direction: row; align-items: center; }
+}
+
+/* ---------- Poděkování po volbách (homepage) ---------- */
+.thankyou-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--ods-gradient);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+}
+.thankyou-photo {
+  width: 96px; height: 96px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, .7);
+  flex-shrink: 0;
+}
+.thankyou-eyebrow {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: .8rem;
+  letter-spacing: .05em;
+  color: rgba(255, 255, 255, .85);
+  margin-bottom: 8px;
+}
+.thankyou-body h2 { color: #fff; font-size: 1.5rem; margin-bottom: 14px; }
+.thankyou-body p { color: rgba(255, 255, 255, .92); margin-bottom: 12px; max-width: 68ch; }
+.thankyou-signoff { font-weight: 700; color: #fff; margin-bottom: 0; }
+@media (min-width: 620px) {
+  .thankyou-card { flex-direction: row; align-items: flex-start; }
 }
 
 /* ---------- Sekce obecně ---------- */

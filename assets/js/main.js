@@ -10,64 +10,7 @@
     initActiveLink();
     initProgramTiles();
     initCandidates();
-    initVoteCalendar();
   });
-
-  /* Tlačítko "Přidat do kalendáře" na homepage — vygeneruje .ics se
-     schůzkou "Jít volit ODS Vrchlabí" a nechá ho stáhnout/otevřít. */
-  function initVoteCalendar() {
-    var btn = document.getElementById("add-to-calendar-btn");
-    if (!btn) return;
-
-    btn.addEventListener("click", function () {
-      var stamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
-      var pollingUrl = "https://www.muvrchlabi.cz/e_download.php?file=/data/uredni_deska/obsah2748_2.pdf&original=%C3%9AD_Ozn%C3%A1men%C3%AD_-_po%C4%8Det_okrsk%C5%AF.pdf";
-      var ics = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//ODS Vrchlabi//Komunalni volby 2026//CS",
-        "CALSCALE:GREGORIAN",
-        "BEGIN:VTIMEZONE",
-        "TZID:Europe/Prague",
-        "BEGIN:DAYLIGHT",
-        "TZOFFSETFROM:+0100",
-        "TZOFFSETTO:+0200",
-        "TZNAME:CEST",
-        "DTSTART:19700329T020000",
-        "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU",
-        "END:DAYLIGHT",
-        "BEGIN:STANDARD",
-        "TZOFFSETFROM:+0200",
-        "TZOFFSETTO:+0100",
-        "TZNAME:CET",
-        "DTSTART:19701025T030000",
-        "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU",
-        "END:STANDARD",
-        "END:VTIMEZONE",
-        "BEGIN:VEVENT",
-        "UID:volby2026-" + stamp + "@odsvrchlabi.cz",
-        "DTSTAMP:" + stamp,
-        "DTSTART;TZID=Europe/Prague:20261010T090000",
-        "DTEND;TZID=Europe/Prague:20261010T100000",
-        "SUMMARY:Jít volit ODS Vrchlabí",
-        "LOCATION:Vrchlabí",
-        "DESCRIPTION:Komunální volby 2026 – hlasovací místnosti jsou otevřené v pátek 9. října 14:00–22:00 a v sobotu 10. října 8:00–14:00. Podpořte ODS Vrchlabí\\, kandidátní listina číslo 1. Seznam volebních místností: " + pollingUrl,
-        "URL:" + pollingUrl,
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ].join("\r\n");
-
-      var blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement("a");
-      a.href = url;
-      a.download = "jit-volit-ods-vrchlabi.ics";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-    });
-  }
 
   /* ---------- Mobilní navigace ---------- */
   function initNav() {
